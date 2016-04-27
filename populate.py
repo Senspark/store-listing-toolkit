@@ -134,10 +134,17 @@ def checkParams(requiredParams, optionalParams, context):
         sys.exit()
         
 def dumpUsage():
-    print "Usage: ./populate.py metadata -platform PLATFORM -src_data_path SRC_DATA_PATH -prj_path FASTLANE_PRJ_PATH -manual_src_meta_path MANUAL_SRC_PATH"
-    print "  Sample: ./populate.py metadata -platform iOS -src_data_path data.xlsx -prj_path . -src_screenshots_path ./src/screenshots"
-    print "Usage: ./populate.py screenshots -platform PLATFORM -src_screenshots_path SRC_SCREENSHOTS_PATH -prj_path FASTLANE_PRJ_PATH "
-    print "  Sample: ./populate.py screenshots -platform android -src_screenshots_path ./src/screenshots -prj_path ."
+    print "usage:   ./populate (metadata|screenshots) -platform <platform> -prj-path <prj-path> <parameters>"
+    print "\n"
+    print "metadata command parameters"
+    print "         -data-file-path <data-file-path>            xlsx data file path"
+    print "         [-customized-metadata-path <customized-metadata-path>]"
+    print "                                                     after populate metadata from xlsx data, will overwrite with this customized metadata"
+    print "sample:  ./populate.py metadata -platform iOS -prj-path . -data-file-path ../src/data.xlsx -customized-metadata-path ../src/itunes/metadata"
+    print "\n"
+    print "screenshots command parameters"
+    print "         -screenshots-path <screenshots-path>        screenshots path"                                                                                                                    
+    print "sample:  ./populate.py screenshots -platform android -prj-path . -screenshots-path ../src/screenshots"
 
 def genFile(path, content):
     print path
@@ -154,19 +161,19 @@ def checkAndGenFile(path, content, max):
 # populate metadata
 def populateMetadata():
     context = {
-        'src_data_path'         : 'undefined',
-        'prj_path'     : 'undefined',
-        'manual_src_meta_path'  : 'undefined',
+        'data-file-path'         : 'undefined',
+        'prj-path'     : 'undefined',
+        'customized-metadata-path'  : 'undefined',
         'platform': 'undefined'
     }
 
-    checkParams(['src_data_path', 'prj_path', 'platform'], ['manual_src_meta_path'], context)
+    checkParams(['data-file-path', 'prj-path', 'platform'], ['customized-metadata-path'], context)
 
     if context['platform'].lower()=='ios':
         for key, value in IOS_LANGUAGES_CODES.iteritems():
-            wb = openpyxl.load_workbook(context['src_data_path'])
+            wb = openpyxl.load_workbook(context['data-file-path'])
             sheet = wb.get_sheet_by_name('Sheet1')
-            metadataPath = context['prj_path'] + '/metadata/'
+            metadataPath = context['prj-path'] + '/metadata/'
             
             #prepare languages folders
             if not os.path.exists(metadataPath + key):
@@ -187,14 +194,14 @@ def populateMetadata():
                     checkAndGenFile(metadataPath + key + '/keywords.txt', sheet.cell(row=4, column=i).value, 100)
                     checkAndGenFile(metadataPath + key + '/release_notes.txt', sheet.cell(row=5, column=i).value, 4000)
                     checkAndGenFile(metadataPath + key + '/description.txt', sheet.cell(row=7, column=i).value, 4000)
-            if (context['manual_src_meta_path']!="undefined"):
+            if (context['customized-metadata-path']!="undefined"):
                 '''to do: for ios'''
                      
     elif context['platform'].lower()=='android':
         for key, value in ANDROID_LANGUAGES_CODES.iteritems():
-            wb = openpyxl.load_workbook(context['src_data_path'])
+            wb = openpyxl.load_workbook(context['data-file-path'])
             sheet = wb.get_sheet_by_name('Sheet1')
-            metadataPath = context['prj_path'] + '/metadata/'
+            metadataPath = context['prj-path'] + '/metadata/'
             
             #prepare languages folders
             if not os.path.exists(metadataPath + key):
@@ -216,20 +223,20 @@ def populateMetadata():
                     checkAndGenFile(metadataPath + key + '/short_description.txt', sheet.cell(row=6, column=i).value, 80)
                     checkAndGenFile(metadataPath + key + '/full_description.txt', sheet.cell(row=7, column=i).value, 4000)
                     
-            if (context['manual_src_meta_path']!="undefined"):
-                cmd = 'cp -r ' + context['manual_src_meta_path'] + '/ ' + metadataPath
+            if (context['customized-metadata-path']!="undefined"):
+                cmd = 'cp -r ' + context['customized-metadata-path'] + '/ ' + metadataPath
                 print cmd
                 os.system(cmd)
 
 # populate screenshots
 def populateScreenshots():
     context = {
-        'src_screenshots_path'  : 'undefined',
-        'prj_path'     : 'undefined'
+        'screenshots-path'  : 'undefined',
+        'prj-path'     : 'undefined'
     }
     
-    checkParams(['src_screenshots_path', 'prj_path'], [], context)
-    for root, dirs, files in os.walk(context['src_screenshots_path'], topdown=False):
+    checkParams(['screenshots-path', 'prj-path'], [], context)
+    for root, dirs, files in os.walk(context['screenshots-path'], topdown=False):
         for name in files:
             if name.endswith(".png"):
                 source_path = os.path.join(root, name)
@@ -241,7 +248,7 @@ def populateScreenshots():
 
     count = 0
     
-    screenshotsPath = context['prj_path'] + '/screenshots/'
+    screenshotsPath = context['prj-path'] + '/screenshots/'
     cmd = 'rm -r ' + screenshotsPath
     print cmd
     os.system(cmd);
@@ -250,7 +257,7 @@ def populateScreenshots():
         if not os.path.exists(screenshotsPath + key):
             os.makedirs(screenshotsPath + key)
         
-        for root, dirs, files in os.walk(context['src_screenshots_path'], topdown=False):
+        for root, dirs, files in os.walk(context['screenshots-path'], topdown=False):
             for name in files:
                 if name.endswith(".jpg"):
                     count = count + 1
