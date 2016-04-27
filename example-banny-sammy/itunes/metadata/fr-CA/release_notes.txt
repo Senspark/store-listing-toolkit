@@ -1,0 +1,2 @@
+- Diminution quantité de pierres précieuses dans Gem-case Carte
+- Correction de bugs et d'améliorer les performances

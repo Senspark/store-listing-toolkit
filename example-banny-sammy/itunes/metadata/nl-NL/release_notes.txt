@@ -1,0 +1,2 @@
+- Afname aantal gems in Gem-box op de kaart
+- Bug fixes en de prestaties te verbeteren

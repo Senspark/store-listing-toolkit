@@ -1,0 +1,2 @@
+- Harita Gem-kutusunda taşlar azalış miktarı
+- Hata düzeltmeleri ve geliştirmek performans

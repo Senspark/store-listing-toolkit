@@ -1,0 +1,2 @@
+- Reducer mængden af perler i perle-box i Kort
+- Fejlrettelser og forbedre ydeevnen

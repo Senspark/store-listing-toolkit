@@ -1,0 +1,2 @@
+- Quantidade Diminuir das gemas em Gem-box no Mapa
+- Correções de bugs e desempenho melhorar

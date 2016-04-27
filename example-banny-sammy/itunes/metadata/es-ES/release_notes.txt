@@ -1,0 +1,2 @@
+- Disminuir la cantidad de gemas en la gema de la caja en Mapa
+- Corrección de errores y mejorar el rendimiento

@@ -1,0 +1,2 @@
+- Reduser mengden av skatter i Gem-boksen i kart
+- Feilrettinger og forbedre ytelsen

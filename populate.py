@@ -11,37 +11,35 @@ from PIL import Image
 PRIVACY_URL = "http://senspark.com/privacy-policy"
 MARKETING_URL = "http://senspark.com"
 SUPPORT_URL = "http://fb.com/teamsenspark"
-#VIDEO = "https://www.youtube.com/watch?v=hA0Q2NZWqrQ"
 
-
-IOS_LANGUAGES_CODES   = {   'en-US'     :   'english',
-                        'en-AU'     :   'english',
-                        'en-CA'     :   'english',
-                        'en-GB'     :   'english',
-                        'zh-Hans'   :   'chinese simplified',
-                        'zh-Hant'   :   'chinese traditional',
-                        'da'        :   'danish',
-                        'de-DE'     :   'german',
-                        'el'        :   'greek',
-                        'fi'        :   'finnish',
-                        'fr-CA'     :   'french',
-                        'fr-FR'     :   'french',
-                        'id'        :   'indonesian',
-                        'it'        :   'italian',
-                        'ja'        :   'japanese',
-                        'ko'        :   'korean',
-                        'ms'        :   'malay',
-                        'nl-NL'     :   'dutch',
-                        'no'        :   'norwegian',
-                        'pt-BR'     :   'portuguese brazil',
-                        'pt-PT'     :   'portuguese portugal',
-                        'ru'        :   'russian',
-                        'es-MX'     :   'spanish',
-                        'es-ES'     :   'spanish',
-                        'sv'        :   'swedish',
-                        'th'        :   'thai',
-                        'tr'        :   'turkish',
-                        'vi'        :   'vietnamese'
+IOS_LANGUAGES_CODES   = {       'en-US'     :   'english',
+                                'en-AU'     :   'english',
+                                'en-CA'     :   'english',
+                                'en-GB'     :   'english',
+                                'zh-Hans'   :   'chinese simplified',
+                                'zh-Hant'   :   'chinese traditional',
+                                'da'        :   'danish',
+                                'de-DE'     :   'german',
+                                'el'        :   'greek',
+                                'fi'        :   'finnish',
+                                'fr-CA'     :   'french',
+                                'fr-FR'     :   'french',
+                                'id'        :   'indonesian',
+                                'it'        :   'italian',
+                                'ja'        :   'japanese',
+                                'ko'        :   'korean',
+                                'ms'        :   'malay',
+                                'nl-NL'     :   'dutch',
+                                'no'        :   'norwegian',
+                                'pt-BR'     :   'portuguese brazil',
+                                'pt-PT'     :   'portuguese portugal',
+                                'ru'        :   'russian',
+                                'es-MX'     :   'spanish',
+                                'es-ES'     :   'spanish',
+                                'sv'        :   'swedish',
+                                'th'        :   'thai',
+                                'tr'        :   'turkish',
+                                'vi'        :   'vietnamese'
 }
 
 ANDROID_LANGUAGES_CODES   = {   'en-US'     :   'english',
@@ -82,41 +80,38 @@ ANDROID_LANGUAGES_CODES   = {   'en-US'     :   'english',
                                 'tr-TR'     :   'turkish',
                                 'uk'        :   'ukrainian',
                                 'vi'        :   'vietnamese',
-
-                                'af' : 'afrikaans',
-                                'am' : 'amharic',
-                                'hy-AM' : 'armenian',
-                                'az-AZ' : 'azerbaijani',
-                                'eu-ES' : 'basque',
-                                'bn-BD': 'bengali',
-                                'my-MM': 'burmese',
-                                'ca' : 'catalan',
-                                'et' : 'estonian',
-                                'gl-ES':'galician',
-                                'ka-GE':'georgian',
-                                'iw-IL':'hebrew',
-                                'is-IS':'icelandic',
-                                'kn-IN':'kannada',
-                                'km-KH':'khmer',
-                                'ky-KG':'kyrgyz',
-                                'lo-LA':'Lao',
-                                'lt':'lithuanian',
-                                'mk-MK':'macedonian',
-                                'ml-IN':'malayalam',
-                                'mr-IN':'marathi',
-                                'mn-MN':'mongolian',
-                                'ne-NP':'nepali',
-                                'fa':'persian',
-                                'si-LK':'Sinhala',
-                                'sw':'swahili',
-                                'ta-IN':'tamil',
-                                'te-IN':'telugu',
-                                'zu':'zulu',
+                                'af'        :   'afrikaans',
+                                'am'        :   'amharic',
+                                'hy-AM'     :   'armenian',
+                                'az-AZ'     :   'azerbaijani',
+                                'eu-ES'     :   'basque',
+                                'bn-BD'     :   'bengali',
+                                'my-MM'     :   'burmese',
+                                'ca'        :   'catalan',
+                                'et'        :   'estonian',
+                                'gl-ES'     :   'galician',
+                                'ka-GE'     :   'georgian',
+                                'iw-IL'     :   'hebrew',
+                                'is-IS'     :   'icelandic',
+                                'kn-IN'     :   'kannada',
+                                'km-KH'     :   'khmer',
+                                'ky-KG'     :   'kyrgyz',
+                                'lo-LA'     :   'Lao',
+                                'lt'        :   'lithuanian',
+                                'mk-MK'     :   'macedonian',
+                                'ml-IN'     :   'malayalam',
+                                'mr-IN'     :   'marathi',
+                                'mn-MN'     :   'mongolian',
+                                'ne-NP'     :   'nepali',
+                                'fa'        :   'persian',
+                                'si-LK'     :   'Sinhala',
+                                'sw'        :   'swahili',
+                                'ta-IN'     :   'tamil',
+                                'te-IN'     :   'telugu',
+                                'zu'        :   'zulu',
 }
 
-
 context = {}
-
 
 def checkParams(requiredParams, optionalParams, context):
     for i in range(1, len(sys.argv)):
@@ -137,8 +132,7 @@ def checkParams(requiredParams, optionalParams, context):
     if raise_error != False:
         dumpUsage()
         sys.exit()
-
-
+        
 def dumpUsage():
     print "Usage: ./populate.py metadata -platform PLATFORM -src_data_path SRC_DATA_PATH -prj_path FASTLANE_PRJ_PATH -manual_src_meta_path MANUAL_SRC_PATH"
     print "  Sample: ./populate.py metadata -platform iOS -src_data_path data.xlsx -prj_path . -src_screenshots_path ./src/screenshots"
@@ -156,8 +150,6 @@ def checkAndGenFile(path, content, max):
         print "%s is too long and greater than %d characters: %d" % (path, max, len(content))
         #sys.exit()
     genFile(path, content.encode('utf-8'))
-
-
 
 # populate metadata
 def populateMetadata():
@@ -184,16 +176,20 @@ def populateMetadata():
             genFile(metadataPath + key + '/privacy_url.txt', PRIVACY_URL)
             genFile(metadataPath + key + '/marketing_url.txt', MARKETING_URL)
             genFile(metadataPath + key + '/support_url.txt', SUPPORT_URL)
-
-            #print sheet.cell(row = 1, column = 2).value + " " #check loading excel file
-
+            
+            #check loading excel file
+            #print sheet.cell(row = 1, column = 2).value + " "
+            
+            #write names, keywords, release notes, description
             for i in range(2, 29):
                 if str(sheet.cell(row=1, column=i).value).lower() == value.lower():
                     checkAndGenFile(metadataPath + key + '/name.txt', sheet.cell(row=2, column=i).value, 255)
                     checkAndGenFile(metadataPath + key + '/keywords.txt', sheet.cell(row=4, column=i).value, 100)
                     checkAndGenFile(metadataPath + key + '/release_notes.txt', sheet.cell(row=5, column=i).value, 4000)
                     checkAndGenFile(metadataPath + key + '/description.txt', sheet.cell(row=7, column=i).value, 4000)
-
+            if (context['manual_src_meta_path']!="undefined"):
+                '''to do: for ios'''
+                     
     elif context['platform'].lower()=='android':
         for key, value in ANDROID_LANGUAGES_CODES.iteritems():
             wb = openpyxl.load_workbook(context['src_data_path'])
@@ -205,10 +201,12 @@ def populateMetadata():
                 os.makedirs(metadataPath + key)
         
             #write privacy_url, marketing_url, support_url files
-            #genFile(metadataPath + key + '/video.txt', VIDEO)
+            genFile(metadataPath + key + '/video.txt', sheet.cell(row=8, column=2).value)
             
-            #print sheet.cell(row = 1, column = 2).value + " " #check loading excel file
+            #check loading excel file
+            #print sheet.cell(row = 1, column = 2).value + " "
             
+            #write title, short description, full description
             for i in range(2, 69):
                 if str(sheet.cell(row=1, column=i).value).lower() == value.lower():
                     if len(sheet.cell(row=2, column=i).value)<=30:
@@ -217,10 +215,11 @@ def populateMetadata():
                         checkAndGenFile(metadataPath + key + '/title.txt', sheet.cell(row=3, column=i).value, 30)
                     checkAndGenFile(metadataPath + key + '/short_description.txt', sheet.cell(row=6, column=i).value, 80)
                     checkAndGenFile(metadataPath + key + '/full_description.txt', sheet.cell(row=7, column=i).value, 4000)
-
-    # copy some manual languages
-    #os.listdir(context['manual_src_meta_path'])
-
+                    
+            if (context['manual_src_meta_path']!="undefined"):
+                cmd = 'cp -r ' + context['manual_src_meta_path'] + '/ ' + metadataPath
+                print cmd
+                os.system(cmd)
 
 # populate screenshots
 def populateScreenshots():
@@ -261,7 +260,10 @@ def populateScreenshots():
                     print "Copy file: %s > %s" % (source_path, target_path)
 
 def selectCommand():
-    print sys.argv[0]
+    #print sys.argv[0]
+    if len(sys.argv)<2:
+        dumpUsage()
+        sys.exit()
     if "metadata" == sys.argv[1]:
         populateMetadata()
     elif "screenshots" == sys.argv[1]:

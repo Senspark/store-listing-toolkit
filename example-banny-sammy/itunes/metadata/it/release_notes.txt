@@ -1,0 +1,2 @@
+- Diminuzione quantità di gemme in Gem-box in Mappa
+- Correzioni di bug e migliorare le prestazioni

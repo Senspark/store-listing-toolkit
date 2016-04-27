@@ -1,0 +1,2 @@
+- Decrease amount of gems in Gem-box in Map
+- Bug fixes and improve performance

@@ -1,0 +1,2 @@
+- Minska mängden pärlor i Gem-box Karta
+- Buggfixar och förbättra prestanda

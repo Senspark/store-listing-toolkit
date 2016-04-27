@@ -1,0 +1,2 @@
+- Abnahme Menge von Edelsteinen in Gem-Box in der Karte
+- Bug-Fixes und die Leistung zu verbessern

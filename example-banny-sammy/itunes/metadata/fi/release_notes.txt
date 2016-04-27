@@ -1,0 +1,2 @@
+- Vähennä määrä helmiä Gem-ruutuun Kartta
+- Virheenkorjauksia ja parantaa suorituskykyä
