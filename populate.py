@@ -161,10 +161,10 @@ def checkAndGenFile(path, content, max):
 # populate metadata
 def populateMetadata():
     context = {
-        'data-file-path'         : 'undefined',
-        'prj-path'     : 'undefined',
+        'data-file-path'            : 'undefined',
+        'prj-path'                  : 'undefined',
         'customized-metadata-path'  : 'undefined',
-        'platform': 'undefined'
+        'platform'                  : 'undefined'
     }
 
     checkParams(['data-file-path', 'prj-path', 'platform'], ['customized-metadata-path'], context)
@@ -232,7 +232,7 @@ def populateMetadata():
 def populateScreenshots():
     context = {
         'screenshots-path'  : 'undefined',
-        'prj-path'     : 'undefined'
+        'prj-path'          : 'undefined'
     }
     
     checkParams(['screenshots-path', 'prj-path'], [], context)
