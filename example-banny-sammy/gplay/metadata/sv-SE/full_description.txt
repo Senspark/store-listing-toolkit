@@ -16,11 +16,14 @@ SPELA SPEL SERVICE lämnar höga poäng och låser upp massor av framgångar fö
 
 Molnlagring synkroniserar lätt spelet mellan enheterna och låser hela spelet funktioner när den är ansluten till Internet.
 
-Spela med vänner med roligare genom att sända och ber om liv, vän poäng rankning, titta vänner på kartan, att dela dina bästa resultat, och begär hjälp från vänner.
+Spela med vänner med roligare genom att sända och be om lives, vän värdering rankning, titta vänner på kartan, att dela dina bästa resultat, och begär hjälp från vänner.
 
 UNIVERSAL - Olika grafik är inställda för att passa alla dina enheter. Njut av skarpa tecken på dina telefoner och surfplattor.
 
-Redan ett fan av Roll och äta?
+Redan ett fan av BannySammy?
 - Besök vår officiella hemsida på http://www.senspark.com
 - Skicka feedback via feedback@senspark.com
 - Som och följ på https://www.facebook.com/TeamSenspark
+
+*** Behörigheter ***
+GET_ACCOUNTS: Används endast om du vill logga in eller spela med dina vänner via Google + eller ta emot push-anmälan

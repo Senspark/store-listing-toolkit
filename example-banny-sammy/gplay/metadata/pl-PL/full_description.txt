@@ -20,7 +20,10 @@ Grać z przyjaciółmi z więcej zabawy poprzez wysyłanie i prosząc o życiu, 
 
 UNIVERSAL - Różne grafiki znajdują się zmieścić wszystkich urządzeń. Ciesz się wyraźnych znaków na telefonach i tabletach.
 
-Już fanem Roll and Eat?
+Już fanem BannySammy?
 - Odwiedź oficjalną stronę na http://www.senspark.com
 - Wyślij swoją opinię poprzez feedback@senspark.com
 - Podobnie jak i śledź na https://www.facebook.com/TeamSenspark
+
+*** *** Uprawnienia
+GET_ACCOUNTS: używany tylko jeśli chcesz zalogować się lub bawić się z przyjaciółmi za pośrednictwem Google + lub odbierać powiadomienia push

@@ -20,7 +20,10 @@ POWER-UPS是有幫助的，以應對具有挑戰性的水平。
 
 通用 - 不同的圖形設置，以適應所有設備。享受你的手機和平板電腦的清脆的字符。
 
-已經輥和風扇吃？
+已經BannySammy的粉絲嗎？
 - 訪問我們的官方網站在http://www.senspark.com
 - 通過feedback@senspark.com意見徵集
 - 像與遵循https://www.facebook.com/TeamSenspark
+
+*** ***權限
+GET_ACCOUNTS：只有當你想登錄或通過谷歌+發揮你的朋友或接收推送通知使用

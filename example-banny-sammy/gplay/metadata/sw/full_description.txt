@@ -20,7 +20,10 @@ Kucheza na marafiki na furaha zaidi kwa kutuma na kuuliza kwa maisha, rafiki ala
 
 UNIVERSAL - graphics mbalimbali ni kuweka na kifafa yote ya vifaa yako. Kufurahia wahusika crisp juu ya simu yako na vidonge.
 
-Tayari shabiki wa Unaendelea na kula?
+Tayari shabiki wa BannySammy?
 - Ziara tovuti yetu rasmi katika http://www.senspark.com
 - Tuma maoni yako kupitia feedback@senspark.com
 - Like & kufuata juu https://www.facebook.com/TeamSenspark
+
+*** Permissions ***
+GET_ACCOUNTS: kutumika Tu kama unataka kuingia katika au kucheza na rafiki yako kupitia Google + au kupokea kushinikiza taarifa

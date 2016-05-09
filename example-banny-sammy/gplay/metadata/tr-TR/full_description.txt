@@ -20,7 +20,10 @@ arkadaşlar yardım göndermek ve yaşamları için soran arkadaş puanı sıral
 
 UNIVERSAL - Farklı grafikler cihazların tüm uyacak şekilde ayarlanır. senin telefonlarda ve tabletlerde net karakterler keyfini çıkarın.
 
-Zaten and Roll hayranı yiyin?
+Zaten BannySammy hayranı?
 - Http://www.senspark.com adresindeki resmi sitesini ziyaret edin
 - Feedback@senspark.com üzerinden görüşlerinizi gönderin
 - Gibi & https://www.facebook.com/TeamSenspark takip
+
+*** İzinler ***
+GET_ACCOUNTS: giriş veya Google + 'yoluyla arkadaşlarınızla oynamak ya da push bildirimi almak istiyorsanız Sadece kullanılan

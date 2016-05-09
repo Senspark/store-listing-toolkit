@@ -20,7 +20,10 @@ Pelaa ystävien kanssa hauskempaa lähettämällä ja pyytävät elämää, yst�
 
 UNIVERSAL - Eri grafiikka asetetaan sopivat kaikki laitteet. Nauti rapeaksi merkkejä puhelimet ja tabletit.
 
-Jo fani Roll ja syödä?
+Jo fani BannySammy?
 - Käy virallisella sivustolla osoitteessa http://www.senspark.com
 - Lähetä palautetta kautta feedback@senspark.com
 - Like & seurata https://www.facebook.com/TeamSenspark
+
+*** Oikeudet ***
+GET_ACCOUNTS: Käytetään vain, jos haluat kirjautua sisään tai pelata ystävien kautta Google + tai vastaanottaa push ilmoituksen

@@ -20,7 +20,10 @@ PLAY WITH FRIENDS with more fun by sending and asking for lives, friend score ra
 
 UNIVERSAL — Different graphics are set to fit all of your devices. Enjoy the crisp characters on your phones and tablets. 
 
-Already a fan of Roll and Eat?
+Already a fan of BannySammy?
  - Visit our official site at http://www.senspark.com
  - Send your feedback via feedback@senspark.com
  - Like & follow on https://www.facebook.com/TeamSenspark
+
+*** Permissions ***
+GET_ACCOUNTS: Only used if you want to log in or play with your friends via Google + or receive push notification

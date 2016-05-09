@@ -20,7 +20,10 @@ CLOUD Iš SAVE lengvai sinchronizuoja tarp jūsų įrenginius žaidimą ir atrak
 
 Universal - Įvairūs Grafika yra nustatyti, kad tilptų visi jūsų įrenginius. Mėgaukitės aiškūs simboliai savo telefonus ir planšetinius kompiuterius.
 
-Jau roll ir ventiliatorius valgyti?
+Jau yra BannySammy ventiliatorius?
 - Aplankykite mūsų oficialų svetainėje adresu http://www.senspark.com
 - Siųsti atsiliepimą per feedback@senspark.com
 - Kaip ir sekite ant https://www.facebook.com/TeamSenspark
+
+*** Leidimai ***
+GET_ACCOUNTS: Tik naudoti, jei norite prisijungti arba žaisti su savo draugais per "Google +" arba gauti pranešimą push

@@ -20,7 +20,10 @@ Juga amb els teus amics amb més diversió mitjançant l'enviament i demanant vi
 
 UNIVERSAL - s'estableixen diferents gràfics per adaptar-se a tots els dispositius. Gaudir dels caràcters nítids en els seus telèfons i tauletes.
 
-Ja és fan de rotllo i coma?
+Ja és fan de BannySammy?
 - Visita el nostre lloc oficial en http://www.senspark.com
 - Envia els teus comentaris a través de feedback@senspark.com
 - Igual que en https://www.facebook.com/TeamSenspark i segueix
+
+*** *** Permisos
+GET_ACCOUNTS: Només s'utilitza si voleu iniciar sessió en o jugar amb els teus amics a través de Google+ o rebre notificació d'inserció

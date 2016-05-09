@@ -20,7 +20,10 @@ Lagunekin jolastu fun gehiago laguntza lagunen laguna bidaliz eta bizitza eskatu
 
 UNIVERSAL - grafiko desberdinak ezarri dira gailu guztietan egokitzeko. Gozatu crisp pertsonaiak zure telefono eta pilulak.
 
-Dagoeneko Roll eta fan bat jan?
+Dagoeneko BannySammy zalea?
 - Gure gune ofiziala bisitatu http://www.senspark.com at
 - Eusko Jaurlaritza feedback@senspark.com bidez
 - Like & jarraitu on https://www.facebook.com/TeamSenspark
+
+*** *** Baimenak
+GET_ACCOUNTS: bakarrik erabiltzen den saio hasi edo zure lagunekin jolastu Google + bidez zein push jakinarazpen jaso nahi baduzu

@@ -1,7 +1,7 @@
 Frumskógur er fullur af matvælum fyrir sætu öpum okkar og ber, Sammy og BANNY. Eitt vandamál: Hindranir koma í veg fyrir að dýrin ná uppáhalds skemmtun þeirra. Reyndu að finna leið sem leiðir þá til banana og hunang krukkur og fleira.
 
 *** Leikur leika ***
-Hjálp dýrin rúlla í fæðu þeirra. Monkeys borða banana, epli og perur, og ber borða lax og hunang. Wood blokkir eru brjóta meðan blokkir steini eru ekki. Það eru fleiri leikur atriði til að koma með í leiknum leiðbeiningar sem leikinn líður.
+Hjálp dýrin rúlla í fæðu þeirra. Monkeys borða banana, epli og perur, og ber borða lax og hunang. Viður blokkir eru brjóta meðan blokkir steini eru ekki. Það eru fleiri leikur atriði til að koma með í leiknum leiðbeiningar sem leikinn líður.
 
 *** leikur lögun ***
 4 þáttur með 144 stigum - Það eru 36 stig í hvert skipti: Vor, Haust, Vetur, sumar. Hver og einn hefur mismunandi atriði leikur og svona mismunandi stefnu til að fæða öpum og birni.
@@ -20,7 +20,10 @@ Spila með vinum með meiri gaman með því að senda og biðja um líf, vinur 
 
 UNIVERSAL - Mismunandi grafík ætlar að passa öll tæki. Njóttu skýrar stafi á símum og spjaldtölvum.
 
-Þegar aðdáandi Roll og borða?
+Þegar aðdáandi BannySammy?
 - Heimsókn opinbera síðuna okkar á http://www.senspark.com
 - Senda álit þitt um feedback@senspark.com
 - Eins og fylgja á https://www.facebook.com/TeamSenspark
+
+*** Heimildir ***
+GET_ACCOUNTS: Aðeins notaðir ef þú vilt skrá þig inn eða spila með vinum þínum í gegnum Google + eða fá ýta tilkynningar

@@ -10,7 +10,7 @@ Unique igranja z BRAIN-dražila FUN - Interakcija z okoljem za pomoč živalim r
 
 POWER-UPS so koristni za reševanje zahtevnih ravneh.
 
-Super grafika in zvok - Feel grafične podrobnosti in dobro meša zvoke. Obstajajo štiri različne okoljih in vsi so tako živahno z dnevnimi in nočnimi okolij, vremenskimi vplivi in ton animacij. Ljupkost junakov je neznosno.
+Super grafika in zvok - Feel grafične podrobnosti in dobro meša zvoke. Obstajajo štiri različne okoljih in vsi so tako živahno z dnevno in nočno okolij, vremenskimi vplivi in ton animacij. Ljupkost junakov je neznosno.
 
 PLAY GAME SERVIS navaja visoke ocene in odklene ton dosežke za več zabave.
 
@@ -20,7 +20,10 @@ Igranje s prijatelji z več zabave s pošiljanjem in prosi za življenje, prijat
 
 UNIVERZALNI - Različne grafike so določeni, da ustrezajo vse vaše naprave. Uživajte jasne znake na svojih telefonih in tabličnih računalnikih.
 
-Že ljubitelj roll in jesti?
+Že oboževalec BannySammy?
 - Obiščite našo uradno stran na http://www.senspark.com
 - Pošljite povratne informacije preko feedback@senspark.com
 - Like in sledite https://www.facebook.com/TeamSenspark
+
+*** Dovoljenja ***
+GET_ACCOUNTS: uporabljajo samo, če želite, da se prijavite ali igrajo s prijatelji prek storitve Google + ali prejeti obvestilo, naročeno

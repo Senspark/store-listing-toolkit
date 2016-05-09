@@ -20,7 +20,10 @@ Joace cu prietenii cu mai multă distracție prin trimiterea și cerând viață
 
 UNIVERSAL - Diferite grafice sunt setate pentru a se potrivi toate dispozitivele. Bucurați-vă de caractere clare pe telefoane și tablete.
 
-Deja un fan al roll și mânca?
+Deja un fan al BannySammy?
 - Vizitati site-ul nostru oficial de la http://www.senspark.com
 - Trimite feedback-ul prin feedback@senspark.com
 - La fel ca și urmați pe https://www.facebook.com/TeamSenspark
+
+*** Permisiuni ***
+GET_ACCOUNTS: utilizați numai dacă doriți să conectați sau să se joace cu prietenii prin intermediul Google + sau de a primi notificare push

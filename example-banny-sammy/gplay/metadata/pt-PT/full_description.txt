@@ -20,7 +20,10 @@ Jogar com os amigos com mais diversão enviando e pedindo vidas, amigo pontuaç�
 
 UNIVERSAL - gráficos diferentes estão definidas para caber todos os seus dispositivos. Aproveite os personagens nítidas em seus telefones e tablets.
 
-Já é um fã de Roll e comer?
+Já é um fã de BannySammy?
 - Visite o nosso site oficial em http://www.senspark.com
 - Feedback via feedback@senspark.com
 - Como & siga em https://www.facebook.com/TeamSenspark
+
+*** *** Permissão
+GET_ACCOUNTS: utilizado somente se você quiser fazer login ou jogar com seus amigos através do Google + ou receber notificações push

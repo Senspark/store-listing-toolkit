@@ -20,7 +20,10 @@ Spēlē ar draugiem ar vairāk jautrības, nosūtot un prasot dzīvi, draugs rez
 
 UNIVERSAL - Dažādas grafikas ir noteikti, lai atbilstu visām jūsu ierīcēm. Izbaudiet kraukšķīgus rakstzīmes jūsu tālruņiem un tabletēm.
 
-Jau ventilators Roll un ēst?
+Jau ventilators BannySammy?
 - Apmeklējiet mūsu oficiālo vietni http://www.senspark.com
 - Nosūtīt atsauksmes via feedback@senspark.com
 - Tāpat kā un seko https://www.facebook.com/TeamSenspark
+
+*** atļaujas ***
+GET_ACCOUNTS: Tikai izmantot, ja jūs vēlaties, lai pieteiktos vai spēlēt ar saviem draugiem, izmantojot Google + vai saņemt push paziņojumu

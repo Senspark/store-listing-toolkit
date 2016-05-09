@@ -20,7 +20,10 @@ PLAY 게임의 서비스는 높은 점수를 제출하고 더 많은 재미를 �
 
 UNIVERSAL은 - 다른 그래픽은 모든 장치에 맞게 설정되어 있습니다. 귀하의 휴대 전화와 태블릿에 선명 문자를 즐길 수 있습니다.
 
-이미와 롤의 팬 먹어?
+이미 BannySammy의 팬?
 - http://www.senspark.com에 우리의 공식 웹 사이트를 방문하십시오
 - feedback@senspark.com 통해 의견 보내기
 - 추천 및 https://www.facebook.com/TeamSenspark에 따라
+
+*** 권한 ***
+GET_ACCOUNTS : 당신이 로그인하거나 구글 +를 통해 친구와 함께 재생하거나 푸시 알림을 수신 할 경우에만 사용

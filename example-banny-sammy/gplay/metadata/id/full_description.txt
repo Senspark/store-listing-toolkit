@@ -20,7 +20,10 @@ BERMAIN DENGAN TEMAN dengan lebih menyenangkan dengan mengirimkan dan meminta ke
 
 UNIVERSAL - grafis yang berbeda ditetapkan untuk cocok untuk semua perangkat Anda. Nikmati karakter renyah di ponsel Anda dan tablet.
 
-Sudah penggemar Roll dan Makan?
+Sudah penggemar BannySammy?
 - Kunjungi situs resmi kami di http://www.senspark.com
 - Kirim masukan Anda melalui feedback@senspark.com
 - Seperti & ikuti di https://www.facebook.com/TeamSenspark
+
+*** Izin ***
+GET_ACCOUNTS: Hanya digunakan jika Anda ingin login atau bermain dengan teman-teman Anda melalui Google + atau menerima pemberitahuan push

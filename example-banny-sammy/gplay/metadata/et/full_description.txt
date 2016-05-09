@@ -20,7 +20,10 @@ Mängi sõpradega koos lõbusam saates ja küsib elu, sõber skoor edetabel, vaa
 
 Universal - Erinevad graafika on sätestatud, et mahutada kõiki oma seadmeid. Naudi karge märki oma telefonid ja tabletid.
 
-Juba fänn Roll ja süüa?
+Juba fänn BannySammy?
 - Külasta meie ametlik veebileht aadressil http://www.senspark.com
 - Saada oma tagasiside kaudu feedback@senspark.com
 - Nagu & jätkuks https://www.facebook.com/TeamSenspark
+
+*** Reeglid ***
+GET_ACCOUNTS: Kasutatakse, kui soovite sisse logida või mängida oma sõprade kaudu Google + või saada tõukemärguanne

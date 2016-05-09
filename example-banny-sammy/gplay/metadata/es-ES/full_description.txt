@@ -20,7 +20,10 @@ Juega con tus amigos con más diversión mediante el envío y pidiendo vidas, am
 
 UNIVERSAL - se establecen diferentes gráficos para adaptarse a todos los dispositivos. Disfrutar de los caracteres nítidos en sus teléfonos y tabletas.
 
-Ya es fan de rollo y coma?
+Ya es fan de BannySammy?
 - Visita nuestro sitio oficial en http://www.senspark.com
 - Envía tus comentarios a través de feedback@senspark.com
 - Al igual que en https://www.facebook.com/TeamSenspark y sigue
+
+*** *** Permisos
+GET_ACCOUNTS: Sólo se utiliza si desea iniciar sesión en o jugar con tus amigos a través de Google + o recibir notificación de inserción

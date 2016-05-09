@@ -20,7 +20,10 @@ Gioca con gli amici con più divertimento con l'invio di e chiedendo per la vita
 
 UNIVERSALE - grafica diversa sono impostati per soddisfare tutti i vostri dispositivi. Godetevi i caratteri nitidi sui vostri cellulari e tablet.
 
-Già un fan di rotolo e mangia oggi?
+Già un fan di BannySammy?
 - Visita il nostro sito ufficiale all'indirizzo http://www.senspark.com
 - Invia i tuoi commenti via feedback@senspark.com
 - Come e segui su https://www.facebook.com/TeamSenspark
+
+*** *** Permessi
+GET_ACCOUNTS: usata solo se si desidera effettuare il login o giocare con i tuoi amici tramite Google + o ricevere notifiche push

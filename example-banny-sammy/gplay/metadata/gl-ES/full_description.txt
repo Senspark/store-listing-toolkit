@@ -20,7 +20,10 @@ Xogar cos amigos con máis diversión enviando e pedindo vidas, amigo puntuació
 
 UNIVERSAL - gráficos diferentes están definidas para caber todos os seus dispositivos. Aproveitar os personaxes nítidas nos seus teléfonos e tabletas.
 
-Xa é un fan de Roll e comer?
+Xa é un fan de BannySammy?
 - Visita a nosa web oficial en http://www.senspark.com
 - Suxestións vía feedback@senspark.com
 - Como & diríxase https://www.facebook.com/TeamSenspark
+
+*** *** Permiso
+GET_ACCOUNTS: utilizado só se quere facer login ou xogar cos seus amigos a través de Google + ou recibir notificacións push

@@ -20,7 +20,10 @@ dostlar yardım göndərilməsi və həyatları üçün xahiş, dost hesab sıra
 
 UNIVERSAL - Müxtəlif qrafik cihazlar bütün uyğun müəyyən edilir. Sizin telefon və tablet xırtıldayan simvol malikdirlər.
 
-Artıq və Roll bir fan yemək?
+Artıq BannySammy bir fan?
 - Http://www.senspark.com bizim rəsmi saytına müraciət edin
 - Feedback@senspark.com vasitəsilə Əlaqə göndər
 - Like & https://www.facebook.com/TeamSenspark edin
+
+*** Permissions ***
+GET_ACCOUNTS: daxil olmaq və ya Google + vasitəsilə dostları ilə oynamaq və ya push bildiriş almaq istəyirsinizsə yalnız istifadə

@@ -20,7 +20,10 @@ Igrati se s prijateljima s više zabave slanjem i molba za život, prijatelju re
 
 UNIVERSAL - Različite grafike su postavljeni kako bi odgovarao svim vašim uređajima. Uživajte u jasne znakove o svojim telefone i tablete.
 
-Već fan Roll i jesti?
+Već ljubitelj BannySammy?
 - Posjetite našu službenu stranicu na http://www.senspark.com
 - Pošaljite povratne informacije putem feedback@senspark.com
 - Kao i pratiti na https://www.facebook.com/TeamSenspark
+
+*** Dozvole ***
+GET_ACCOUNTS: Koristi se samo ako želite prijaviti ili igrati sa svojim prijateljima preko Google + ili primiti automatsku obavijest

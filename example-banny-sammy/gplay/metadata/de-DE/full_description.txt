@@ -20,7 +20,10 @@ MIT FREUNDEN mit mehr Spaß spielen, indem sie das Senden und bat um Leben, Freu
 
 UNIVERSAL - Verschiedene Grafiken sind so eingestellt, alle Ihre Geräte zu passen. Genießen Sie die gestochen scharfe Zeichen auf Handys und Tabletten.
 
-Schon ein Fan von Rollen und essen?
+Schon ein Fan von BannySammy?
 - Besuchen Sie unsere offizielle Webseite http://www.senspark.com
 - Senden Sie Ihr Feedback über feedback@senspark.com
 - Like & folgen auf https://www.facebook.com/TeamSenspark
+
+*** Berechtigungen ***
+GET_ACCOUNTS: Wird nur verwendet, wenn Sie eingeloggt sein wollen oder mit Ihren Freunden über Google + spielen oder Push-Benachrichtigung erhalten

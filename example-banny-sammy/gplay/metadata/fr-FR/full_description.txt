@@ -20,7 +20,10 @@ Jouer avec des amis avec plus de plaisir en envoyant et en demandant la vie, un 
 
 UNIVERSAL - Différents graphiques sont mis à répondre à tous vos appareils. Profitez des personnages croustillants sur vos téléphones et tablettes.
 
-Déjà fan de Roll et Eat?
+Déjà fan de BannySammy?
 - Visitez notre site officiel à http://www.senspark.com
 - Envoyer vos commentaires via feedback@senspark.com
 - Comme & suivre sur https://www.facebook.com/TeamSenspark
+
+*** Autorisations ***
+GET_ACCOUNTS: Seulement utilisé si vous voulez vous connecter ou jouer avec vos amis via Google + ou recevoir une notification push

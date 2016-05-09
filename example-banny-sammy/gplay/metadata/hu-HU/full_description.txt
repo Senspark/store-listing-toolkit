@@ -1,4 +1,4 @@
-A dzsungel tele élelmiszerek számára aranyos majmok és medvék, Sammy és Banny. Az egyik probléma: akadályok megakadályozzák az állatok elérik kedvenc kezeli. Próbáld megtalálni az utat, amely ahhoz vezet, hogy a banán és üveg mézet és így tovább.
+A dzsungel tele élelmiszerek számára aranyos majmok és medvék, Sammy és Banny. Az egyik probléma: akadályok állnak az állatok eljussanak a kedvenc kezeli. Próbáld megtalálni az utat, amely ahhoz vezet, hogy a banán és üveg mézet és így tovább.
 
 *** *** Vad játék
 Segítség az állatok tekercs, hogy az élelmiszer. Majmok enni banánt, almát, és körtét és medvék enni lazac és a méz. Fahasábokat törhető míg kőtömbök nem. Több játékelemek jönni, in-game utasításokat a játék előrehaladtával.
@@ -20,7 +20,10 @@ Játszani a barátaival, több móka, a küldő és kérnek életük, barát pon
 
 UNIVERSAL - Különböző grafikák vannak beállítva, hogy illeszkedjen az összes eszközt. Élvezze a jól körvonalazott karakterek a telefonok és tablettát.
 
-Már egy rajongó Roll és enni?
+Már egy rajongó BannySammy?
 - Látogassa meg a hivatalos site-on http://www.senspark.com
 - Küldj visszajelzést keresztül feedback@senspark.com
 - Mint & követik https://www.facebook.com/TeamSenspark
+
+*** *** Engedélyek
+GET_ACCOUNTS: Csak akkor használatos, ha azt szeretné, hogy jelentkezzen be, vagy játszani a barátaival a Google + vagy fogadni push értesítési

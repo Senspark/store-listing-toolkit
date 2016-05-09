@@ -20,7 +20,10 @@ Zahrajte si s priateľmi s viac zábavy zaslaním a žiadajú o život, priateľ
 
 UNIVERSAL - rôzne grafiky sú nastavené, aby sa zmestili vo všetkých svojich zariadeniach. Vychutnajte si ostrý znaky na svoje telefóny a tablety.
 
-Už fanúšik Roll a jesť?
+Už fanúšik BannySammy?
 - Navštívte naše oficiálne webové stránky na http://www.senspark.com
 - Pošli svoj názor prostredníctvom feedback@senspark.com
 - Ako & sledovať na https://www.facebook.com/TeamSenspark
+
+*** Oprávnenie ***
+GET_ACCOUNTS: Používa sa iba v prípade, že chcete prihlásiť, alebo hrať so svojimi priateľmi prostredníctvom služby Google + alebo prijímať push notifikáciu

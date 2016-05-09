@@ -20,7 +20,10 @@ Spill med venner med mer moro ved å sende og ber om liv, venn poengsum rangerin
 
 UNIVERSAL - Ulike grafikk er satt til å passe alle enhetene dine. Nyt skarpe tegn på telefoner og nettbrett.
 
-Allerede en fan av Roll og spise?
+Allerede en fan av BannySammy?
 - Besøk vår offisielle hjemmeside på http://www.senspark.com
 - Send tilbakemelding via feedback@senspark.com
 - Like & følge på https://www.facebook.com/TeamSenspark
+
+*** tillatelser ***
+GET_ACCOUNTS: brukes kun hvis du ønsker å logge inn eller leke med vennene dine via Google + eller motta push-varsling

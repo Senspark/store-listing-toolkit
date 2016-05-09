@@ -20,7 +20,10 @@ Speel met vriende met meer pret deur die stuur en vra vir lewe, vriend telling p
 
 UNIVERSAL - Verskillende beelde is gereed om al jou toestelle te pas. Geniet die helder karakters op jou selfone en tablette.
 
-Reeds 'n fan van Roll en eet?
+Reeds 'n fan van BannySammy?
 - Besoek ons amptelike webwerf by http://www.senspark.com
 - Stuur jou terugvoer via feedback@senspark.com
 - Soos & volg op https://www.facebook.com/TeamSenspark
+
+*** Permissions ***
+GET_ACCOUNTS: Slegs gebruik as jy wil om aan te meld of speel met jou vriende via Google + of ontvang stoot kennisgewing
