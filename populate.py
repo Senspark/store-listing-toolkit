@@ -74,7 +74,7 @@ ANDROID_LANGUAGES_CODES   = {   'en-US'     :   'english',
                                 'ru-RU'     :   'russian',
                                 'sr'        :   'serbian',
                                 'sk'        :   'slovak',
-                                'sl'        :   'Slovenian',
+                                'sl'        :   'slovenian',
                                 'sv-SE'     :   'swedish',
                                 'th'        :   'thai',
                                 'tr-TR'     :   'turkish',
@@ -96,10 +96,10 @@ ANDROID_LANGUAGES_CODES   = {   'en-US'     :   'english',
                                 'kn-IN'     :   'kannada',
                                 'km-KH'     :   'khmer',
                                 'ky-KG'     :   'kyrgyz',
-                                'lo-LA'     :   'Lao',
+                                'lo-LA'     :   'lao',
                                 'lt'        :   'lithuanian',
                                 'mk-MK'     :   'macedonian',
-                                'ml-IN'     :   'malayalam',
+                                'ml-IN'     :   'malay',
                                 'mr-IN'     :   'marathi',
                                 'mn-MN'     :   'mongolian',
                                 'ne-NP'     :   'nepali',
@@ -164,7 +164,7 @@ def populateMetadata():
         'data-file-path'            : 'undefined',
         'prj-path'                  : 'undefined',
         'customized-metadata-path'  : 'undefined',
-        'platform'                  : 'undefined'
+        'platform'                  : 'undefined',
     }
 
     checkParams(['data-file-path', 'prj-path', 'platform'], ['customized-metadata-path'], context)
@@ -188,12 +188,17 @@ def populateMetadata():
             #print sheet.cell(row = 1, column = 2).value + " "
             
             #write names, keywords, release notes, description
+            foundLang = false
             for i in range(2, 29):
                 if str(sheet.cell(row=1, column=i).value).lower() == value.lower():
+                    foundLang = true
                     checkAndGenFile(metadataPath + key + '/name.txt', sheet.cell(row=2, column=i).value, 255)
                     checkAndGenFile(metadataPath + key + '/keywords.txt', sheet.cell(row=4, column=i).value, 100)
                     checkAndGenFile(metadataPath + key + '/release_notes.txt', sheet.cell(row=5, column=i).value, 4000)
                     checkAndGenFile(metadataPath + key + '/description.txt', sheet.cell(row=7, column=i).value, 4000)
+            if foundLang == false:
+                print "Not found data for language %s %" % (value, key)
+                sys.exit()
             if (context['customized-metadata-path']!="undefined"):
                 '''to do: for ios'''
                      
@@ -206,7 +211,7 @@ def populateMetadata():
             #prepare languages folders
             if not os.path.exists(metadataPath + key):
                 os.makedirs(metadataPath + key)
-        
+                
             #write privacy_url, marketing_url, support_url files
             genFile(metadataPath + key + '/video.txt', sheet.cell(row=8, column=2).value)
             
@@ -214,19 +219,36 @@ def populateMetadata():
             #print sheet.cell(row = 1, column = 2).value + " "
             
             #write title, short description, full description
+            foundLang = 'false'
             for i in range(2, 69):
-                if str(sheet.cell(row=1, column=i).value).lower() == value.lower():
+                if str(sheet.cell(row=1, column=i).value).lower() == value.lower(): # find the language in excel data
+                    foundLang = 'true'
                     if len(sheet.cell(row=2, column=i).value)<=30:
                         checkAndGenFile(metadataPath + key + '/title.txt', sheet.cell(row=2, column=i).value, 30)
                     else:
                         checkAndGenFile(metadataPath + key + '/title.txt', sheet.cell(row=3, column=i).value, 30)
                     checkAndGenFile(metadataPath + key + '/short_description.txt', sheet.cell(row=6, column=i).value, 80)
                     checkAndGenFile(metadataPath + key + '/full_description.txt', sheet.cell(row=7, column=i).value, 4000)
+                    if sheet.cell(row=9, column=2).value!="": # write changelog for android
+                        if not os.path.exists(metadataPath + key + "/changelogs"):
+                            os.makedirs(metadataPath + key + "/changelogs")
+                        else:
+                            'to do or not'
+                            #cmd = 'rm -r ' + metadataPath + key + "/changelogs/"
+                            #print cmd
+                            #os.system(cmd);
+                            
+                        verCodes = str(sheet.cell(row=9, column=2).value).split()
+                        for verCode in verCodes:
+                            checkAndGenFile(metadataPath + key + '/changelogs/' + verCode + '.txt', sheet.cell(row=5, column=i).value, 500)
+            if foundLang == 'false':
+                print "Not found data for language %s %" % (value, key)
+                sys.exit()
                     
-            if (context['customized-metadata-path']!="undefined"):
-                cmd = 'cp -r ' + context['customized-metadata-path'] + '/ ' + metadataPath
-                print cmd
-                os.system(cmd)
+        if (context['customized-metadata-path']!="undefined"):
+            cmd = 'cp -r ' + context['customized-metadata-path'] + '/ ' + metadataPath
+            print cmd
+            os.system(cmd)
 
 # populate screenshots
 def populateScreenshots():
