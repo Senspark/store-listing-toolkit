@@ -99,7 +99,7 @@ ANDROID_LANGUAGES_CODES   = {   'en-US'     :   'english',
                                 'lo-LA'     :   'lao',
                                 'lt'        :   'lithuanian',
                                 'mk-MK'     :   'macedonian',
-                                'ml-IN'     :   'malay',
+                                'ml-IN'     :   'malayalam',
                                 'mr-IN'     :   'marathi',
                                 'mn-MN'     :   'mongolian',
                                 'ne-NP'     :   'nepali',
@@ -223,6 +223,7 @@ def populateMetadata():
             for i in range(2, 69):
                 if str(sheet.cell(row=1, column=i).value).lower() == value.lower(): # find the language in excel data
                     foundLang = 'true'
+                     
                     if len(sheet.cell(row=2, column=i).value)<=30:
                         checkAndGenFile(metadataPath + key + '/title.txt', sheet.cell(row=2, column=i).value, 30)
                     else:
