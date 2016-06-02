@@ -143,8 +143,9 @@ def dumpUsage():
     print "sample:  ./populate.py metadata -platform iOS -prj-path . -data-file-path ../src/data.xlsx -customized-metadata-path ../src/itunes/metadata"
     print "\n"
     print "screenshots command parameters"
-    print "         -screenshots-path <screenshots-path>        screenshots path"                                                                                                                    
-    print "sample:  ./populate.py screenshots -platform android -prj-path . -screenshots-path ../src/screenshots"
+    print "         -screenshots-path <screenshots-path>        screenshots path"
+    print "         [-customized-screenshots-path <customized-screenshots-path>]"                                                                                                                    
+    print "sample:  ./populate.py screenshots -platform android -prj-path . -screenshots-path ../src/screenshots -customized-screenshots-path"
 
 def genFile(path, content):
     print path
@@ -168,12 +169,15 @@ def populateMetadata():
     }
 
     checkParams(['data-file-path', 'prj-path', 'platform'], ['customized-metadata-path'], context)
+    metadataPath = context['prj-path'] + '/metadata/'
+    cmd = 'rm -r ' + metadataPath
+    print cmd
+    os.system(cmd);
 
     if context['platform'].lower()=='ios':
         for key, value in IOS_LANGUAGES_CODES.iteritems():
             wb = openpyxl.load_workbook(context['data-file-path'])
             sheet = wb.get_sheet_by_name('Sheet1')
-            metadataPath = context['prj-path'] + '/metadata/'
             
             #prepare languages folders
             if not os.path.exists(metadataPath + key):
@@ -188,25 +192,27 @@ def populateMetadata():
             #print sheet.cell(row = 1, column = 2).value + " "
             
             #write names, keywords, release notes, description
-            foundLang = false
+            foundLang = 'false'
             for i in range(2, 29):
                 if str(sheet.cell(row=1, column=i).value).lower() == value.lower():
-                    foundLang = true
+                    foundLang = 'true'
                     checkAndGenFile(metadataPath + key + '/name.txt', sheet.cell(row=2, column=i).value, 255)
                     checkAndGenFile(metadataPath + key + '/keywords.txt', sheet.cell(row=4, column=i).value, 100)
                     checkAndGenFile(metadataPath + key + '/release_notes.txt', sheet.cell(row=5, column=i).value, 4000)
                     checkAndGenFile(metadataPath + key + '/description.txt', sheet.cell(row=7, column=i).value, 4000)
-            if foundLang == false:
+            if foundLang == 'false':
                 print "Not found data for language %s %" % (value, key)
                 sys.exit()
-            if (context['customized-metadata-path']!="undefined"):
-                '''to do: for ios'''
+                
+        if (context['customized-metadata-path']!="undefined"):
+            cmd = 'cp -r ' + context['customized-metadata-path'] + '/ ' + metadataPath
+            print cmd
+            os.system(cmd)
                      
     elif context['platform'].lower()=='android':
         for key, value in ANDROID_LANGUAGES_CODES.iteritems():
             wb = openpyxl.load_workbook(context['data-file-path'])
             sheet = wb.get_sheet_by_name('Sheet1')
-            metadataPath = context['prj-path'] + '/metadata/'
             
             #prepare languages folders
             if not os.path.exists(metadataPath + key):
@@ -251,14 +257,16 @@ def populateMetadata():
             print cmd
             os.system(cmd)
 
-# populate screenshots
+# populate screenshots, TODO: code for android
 def populateScreenshots():
     context = {
         'screenshots-path'  : 'undefined',
-        'prj-path'          : 'undefined'
+        'prj-path'          : 'undefined',
+        'customized-screenshots-path'  : 'undefined',
+        'platform'                  : 'undefined',
     }
     
-    checkParams(['screenshots-path', 'prj-path'], [], context)
+    checkParams(['screenshots-path', 'prj-path'], ['customized-screenshots-path'], context)
     for root, dirs, files in os.walk(context['screenshots-path'], topdown=False):
         for name in files:
             if name.endswith(".png"):
@@ -274,7 +282,8 @@ def populateScreenshots():
     screenshotsPath = context['prj-path'] + '/screenshots/'
     cmd = 'rm -r ' + screenshotsPath
     print cmd
-    os.system(cmd);
+    os.system(cmd)
+    
     for key, value in IOS_LANGUAGES_CODES.iteritems():
         #prepare languages folders
         if not os.path.exists(screenshotsPath + key):
@@ -288,7 +297,11 @@ def populateScreenshots():
                     target_path = screenshotsPath + key + '/' + name
                     shutil.copyfile(source_path, target_path)
                     print "Copy file: %s > %s" % (source_path, target_path)
-
+    if (context['customized-screenshots-path']!="undefined"):
+        cmd = 'cp -r ' + context['customized-screenshots-path'] + '/ ' + screenshotsPath
+        print cmd
+        os.system(cmd)
+            
 def selectCommand():
     #print sys.argv[0]
     if len(sys.argv)<2:
