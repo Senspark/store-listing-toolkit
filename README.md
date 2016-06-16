@@ -8,3 +8,7 @@ Soft, quick, useful layer built on Fastlane tool, Google Publishing API, Apple i
 3. You should init your fastlane Apple Appstore/Google Play project first.
 3. Run the script populate.py to populate data from xlsx file to your Apple Appstore/Google Play metadata.
 4. Resubmit your data by fastlane command.
+
+**Library dependencies:**
+
+pip install openpyxl==2.3.3
