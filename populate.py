@@ -219,7 +219,8 @@ def populateMetadata():
                 os.makedirs(metadataPath + key)
                 
             #write privacy_url, marketing_url, support_url files
-            genFile(metadataPath + key + '/video.txt', sheet.cell(row=8, column=2).value)
+            if len(sheet.cell(row=8, column=2).value) > 4:
+                genFile(metadataPath + key + '/video.txt', sheet.cell(row=8, column=2).value)
             
             #check loading excel file
             #print sheet.cell(row = 1, column = 2).value + " "
