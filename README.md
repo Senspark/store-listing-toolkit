@@ -1,4 +1,4 @@
-# app-stores-toolkit
+# Store Listing Toolkit
 Soft, quick, useful layer built on Fastlane tool, Google Publishing API, Apple iTransporter
 
 **Usage:**
@@ -18,4 +18,4 @@ Soft, quick, useful layer built on Fastlane tool, Google Publishing API, Apple i
 
 **Library dependencies:**
 
-pip install openpyxl==2.3.3
+`pip install openpyxl==2.3.3`
