@@ -176,100 +176,127 @@ def get_cell(data, row, column):
     result = col_data["v"]
     return result
 
-# populate metadata
-def populate_metadata(sheet_id, prj_path, customized_metadata_path, platform):
-    print "populate metadata: sheet_id = %s prj_path = %s customized_path = %s platform = %s" % \
-        (sheet_id, prj_path, customized_metadata_path, platform)
+def copy_and_overwrite(src_root_dir, dst_root_dir):
+    if src_root_dir == dst_root_dir:
+        return
 
-    metadataPath = prj_path + '/metadata/'
-    cmd = 'rm -r ' + metadataPath
-    print cmd
-    os.system(cmd);
+    for src_dir, dirs, files in os.walk(src_root_dir):
+        dst_dir = src_dir.replace(src_root_dir, dst_root_dir, 1)
 
+        if not os.path.exists(dst_dir):
+            os.makedirs(dst_dir)
+
+        for file in files:
+            src_file = os.path.join(src_dir, file)
+            dst_file = os.path.join(dst_dir, file)
+
+            if os.path.exists(dst_file):
+                os.remove(dst_file)
+
+            shutil.copy(src_file, dst_dir)
+
+def remove_dir_if_exists(dir):
+    if os.path.exists(dir):
+        shutil.rmtree(dir)
+
+def make_dir_if_not_exists(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+# Populate metadata.
+def populate_metadata(sheet_id, prj_dir, customized_dir, platform):
+    print "populate metadata: sheet_id = %s prj_dir = %s customized_dir = %s platform = %s" % \
+        (sheet_id, prj_dir, customized_dir, platform)
+
+    metadata_dir = os.path.join(prj_dir, 'metadata')
+
+    # Remove existing metadata directory.
+    remove_dir_if_exists(metadata_dir)
+
+    # Read sheet data.
     data = read_sheet_data(sheet_id)
 
-    if platform.lower()=='ios':
+    if platform.lower() =='ios':
         for key, value in IOS_LANGUAGES_CODES.iteritems():
             
-            # Prepare languages folders.
-            if not os.path.exists(metadataPath + key):
-                os.makedirs(metadataPath + key)
+            # Prepare language directory.
+            language_dir = os.path.join(metadata_dir, key)
+
+            # Create language directory.
+            make_dir_if_not_exists(language_dir)
             
             # Write privacy_url, marketing_url, support_url files.
-            genFile(metadataPath + key + '/privacy_url.txt', PRIVACY_URL)
-            genFile(metadataPath + key + '/marketing_url.txt', MARKETING_URL)
-            genFile(metadataPath + key + '/support_url.txt', SUPPORT_URL)
+            genFile(os.path.join(language_dir, 'privacy_url.txt'), PRIVACY_URL)
+            genFile(os.path.join(language_dir, 'marketing_url.txt'), MARKETING_URL)
+            genFile(os.path.join(language_dir, 'support_url.txt'), SUPPORT_URL)
             
             # Check loading excel file
             # Print sheet.cell(row = 1, column = 2).value + " "
             
             # Write names, keywords, release notes, description
-            foundLang = 'false'
+            foundLang = False
             for i in range(2, 29):
                 if str(get_cell(data, row=1, column=i)).lower() == value.lower():
-                    foundLang = 'true'
-                    checkAndGenFile(metadataPath + key + '/name.txt',          get_cell(data, row=2, column=i), 255)
-                    checkAndGenFile(metadataPath + key + '/keywords.txt',      get_cell(data, row=4, column=i), 100)
-                    checkAndGenFile(metadataPath + key + '/release_notes.txt', get_cell(data, row=5, column=i), 4000)
-                    checkAndGenFile(metadataPath + key + '/description.txt',   get_cell(data, row=7, column=i), 4000)
-            if foundLang == 'false':
+                    foundLang = True
+                    checkAndGenFile(os.path.join(language_dir, 'name.txt'),          get_cell(data, row=2, column=i), 255)
+                    checkAndGenFile(os.path.join(language_dir, 'keywords.txt'),      get_cell(data, row=4, column=i), 100)
+                    checkAndGenFile(os.path.join(language_dir, 'release_notes.txt'), get_cell(data, row=5, column=i), 4000)
+                    checkAndGenFile(os.path.join(language_dir, 'description.txt'),   get_cell(data, row=7, column=i), 4000)
+
+            if not foundLang:
                 print "Not found data for language %s %" % (value, key)
                 sys.exit()
-                
-        if customized_metadata_path != None:
-            cmd = 'cp -r ' + customized_metadata_path + '/ ' + metadataPath
-            print cmd
-            os.system(cmd)
                      
     elif platform == 'android':
         for key, value in ANDROID_LANGUAGES_CODES.iteritems():
-            
-            #prepare languages folders
-            if not os.path.exists(metadataPath + key):
-                os.makedirs(metadataPath + key)
+
+            # Prepare language directory.
+            language_dir = os.path.join(metadata_dir, key)
+
+            # Create language directory.
+            make_dir_if_not_exists(language_dir)
                 
             #write privacy_url, marketing_url, support_url files
             if len(get_cell(data, row=8, column=2)) > 4:
-                genFile(metadataPath + key + '/video.txt', get_cell(data, row=8, column=2))
+                genFile(os.path.join(language_dir, 'video.txt'), get_cell(data, row=8, column=2))
             
             #check loading excel file
             #print sheet.cell(row = 1, column = 2).value + " "
             
             #write title, short description, full description
-            foundLang = 'false'
+            foundLang = False
             for i in range(2, 69):
                 if str(get_cell(data, row=1, column=i)).lower() == value.lower(): # find the language in excel data
-                    foundLang = 'true'
+                    foundLang = True
                      
+                    # Title.
                     if len(get_cell(data, row=2, column=i))<=30:
-                        checkAndGenFile(metadataPath + key + '/title.txt', get_cell(data, row=2, column=i), 30)
+                        checkAndGenFile(os.path.join(language_dir, 'title.txt'), get_cell(data, row=2, column=i), 30)
                     else:
-                        checkAndGenFile(metadataPath + key + '/title.txt', get_cell(data, row=3, column=i), 30)
-                    checkAndGenFile(metadataPath + key + '/short_description.txt', get_cell(data, row=6, column=i), 80)
-                    checkAndGenFile(metadataPath + key + '/full_description.txt', get_cell(data, row=7, column=i), 4000)
+                        checkAndGenFile(os.path.join(language_dir, 'title.txt'), get_cell(data, row=3, column=i), 30)
+
+                    # Short description and full description.
+                    checkAndGenFile(os.path.join(language_dir, 'short_description.txt'), get_cell(data, row=6, column=i), 80)
+                    checkAndGenFile(os.path.join(language_dir, 'full_description.txt'),  get_cell(data, row=7, column=i), 4000)
+
+                    # Changelogs.
                     if get_cell(data, row=9, column=2) != "": # write changelog for android
-                        if not os.path.exists(metadataPath + key + "/changelogs"):
-                            os.makedirs(metadataPath + key + "/changelogs")
-                        else:
-                            'to do or not'
-                            #cmd = 'rm -r ' + metadataPath + key + "/changelogs/"
-                            #print cmd
-                            #os.system(cmd);
+                        changelog_dir = os.path.join(language_dir, 'changelogs')                        
+                        make_dir_if_not_exists(changelog_dir)
                             
                         verCodes = str(get_cell(data, row=9, column=2)).split()
                         for verCode in verCodes:
-                            checkAndGenFile(metadataPath + key + '/changelogs/' + verCode + '.txt', get_cell(data, row=5, column=i), 500)
-            if foundLang == 'false':
+                            checkAndGenFile(os.path.join(changelog_dir, verCode + '.txt'), get_cell(data, row=5, column=i), 500)
+
+            if not foundLang:
                 print "Not found data for language %s %" % (value, key)
                 sys.exit()
 
-        if customized_metadata_path != None:
-            cmd = 'cp -r ' + customized_metadata_path + '/ ' + metadataPath
-            print cmd
-            os.system(cmd)
+    if customized_dir != None:
+        copy_and_overwrite(customized_dir, metadata_dir)
 
 # populate screenshots, TODO: code for android
-def populate_screenshots(screenshots_path, prj_path, customized_screenshots_path, platform):
+def populate_screenshots(screenshots_input_dir, prj_dir, customized_dir, platform):
     for root, dirs, files in os.walk(screenshots_path, topdown=False):
         for name in files:
             if name.endswith(".png"):
@@ -282,28 +309,28 @@ def populate_screenshots(screenshots_path, prj_path, customized_screenshots_path
 
     count = 0
     
-    screenshotsPath = prj_path + '/screenshots/'
-    cmd = 'rm -r ' + screenshotsPath
-    print cmd
-    os.system(cmd)
+    screenshots_dir = os.path.join(prj_dir, 'screenshots')
+
+    # Remove existing screenshots dir.
+    remove_dir_if_exists(screenshots_dir)
     
     for key, value in IOS_LANGUAGES_CODES.iteritems():
         # Prepare languages folders.
-        if not os.path.exists(screenshotsPath + key):
-            os.makedirs(screenshotsPath + key)
+        language_dir = os.path.join(screenshots_dir, key)
+
+        make_dir_if_not_exists(language_dir)
         
-        for root, dirs, files in os.walk(screenshots_path, topdown=False):
+        for root, dirs, files in os.walk(screenshots_input_dir, topdown=False):
             for name in files:
                 if name.endswith(".jpg"):
                     count = count + 1
                     source_path = os.path.join(root, name)
-                    target_path = screenshotsPath + key + '/' + name
+                    target_path = os.path.join(screenshots_dir, key, name)
                     shutil.copyfile(source_path, target_path)
                     print "Copy file: %s > %s" % (source_path, target_path)
-    if customized_screenshots_path != None:
-        cmd = 'cp -r ' + customized_screenshots_path + '/ ' + screenshotsPath
-        print cmd
-        os.system(cmd)
+
+    if customized_dir != None:
+        copy_and_overwrite(customized_dir, screenshots_dir)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -336,7 +363,7 @@ if __name__ == '__main__':
         required = False
     )
 
-    # Output directory for metadata.
+    # Customized directory for metadata.
     parser.add_argument(
         '-customized-metadata-path',
         nargs = 1,
@@ -351,7 +378,7 @@ if __name__ == '__main__':
         required = False,
     )
 
-    # Output directory for screenshots.
+    # Customized directory for screenshots.
     parser.add_argument(
         '-customized-screenshots-path',
         nargs = 1,
