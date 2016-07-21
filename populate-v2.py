@@ -365,24 +365,30 @@ if __name__ == '__main__':
     populate_type               = args.populate_type
 
     sheet_id                    = args.sheet_id
-    customized_metadata_path    = args.customized_metadata_path
+    if args.customized_metadata_path == None:
+        customized_metadata_path = None
+    else:
+        customized_metadata_path = args.customized_metadata_path[0]
 
     screenshots_path            = args.screenshots_path
-    customized_screenshots_path = args.customized_screenshots_path
+    if args.customized_screenshots_path == None:
+        customized_screenshots_path = None
+    else:
+        customized_screenshots_path = args.customized_screenshots_path[0]
 
     if populate_type == 'metadata':
         if sheet_id == None:
             dumpUsage()
             sys.exit()
         else:
-            populate_metadata(sheet_id[0], project_path, customized_metadata_path[0], platform)
+            populate_metadata(sheet_id[0], project_path, customized_metadata_path, platform)
 
     elif populate_type == 'screenshots':
         if screenshots_path == None:
             dumpUsage()
             sys.exit()
         else:
-            populate_screenshots(screenshots_path[0], project_path, customized_screenshots_path[0], platform)
+            populate_screenshots(screenshots_path[0], project_path, customized_screenshots_path, platform)
 
     else:
         assert(False)
