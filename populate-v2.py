@@ -8,6 +8,7 @@ import shutil
 import urllib2
 import argparse
 import cgi
+
 from PIL import Image
 
 PRIVACY_URL = "http://senspark.com/privacy-policy"
@@ -176,15 +177,22 @@ def get_cell(data, row, column):
     result = col_data["v"]
     return result
 
-def copy_and_overwrite(src_root_dir, dst_root_dir):
+def remove_dir_if_exists(dir):
+    if os.path.exists(dir):
+        shutil.rmtree(dir)
+
+def make_dir_if_not_exists(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+def copy_and_overwrite_with_closure(src_root_dir, dst_root_dir, closure):
     if src_root_dir == dst_root_dir:
         return
 
     for src_dir, dirs, files in os.walk(src_root_dir):
         dst_dir = src_dir.replace(src_root_dir, dst_root_dir, 1)
 
-        if not os.path.exists(dst_dir):
-            os.makedirs(dst_dir)
+        make_dir_if_not_exists(dst_dir)
 
         for file in files:
             src_file = os.path.join(src_dir, file)
@@ -193,15 +201,10 @@ def copy_and_overwrite(src_root_dir, dst_root_dir):
             if os.path.exists(dst_file):
                 os.remove(dst_file)
 
-            shutil.copy(src_file, dst_dir)
+            closure(src_file, dst_file)
 
-def remove_dir_if_exists(dir):
-    if os.path.exists(dir):
-        shutil.rmtree(dir)
-
-def make_dir_if_not_exists(dir):
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+def copy_and_overwrite(src_root_dir, dst_root_dir):
+    copy_and_overwrite_with_closure(src_root_dir, dst_root_dir, shutil.copy)
 
 # Populate metadata.
 def populate_metadata(sheet_id, prj_dir, customized_dir, platform):
@@ -295,20 +298,35 @@ def populate_metadata(sheet_id, prj_dir, customized_dir, platform):
     if customized_dir != None:
         copy_and_overwrite(customized_dir, metadata_dir)
 
+def copy_image_or_convert_if_possible(src_path, dst_path):
+    if src_path.endswith(".png"):
+        # The current image is in PNG format.
+        # Copy and convert to JPG format.                
+        im = Image.open(src_path)
+        new_dst_path = dst_path[:-3] + 'jpg'
+        im.save(new_dst_path, "JPEG")
+        print "Convert %s to %s" % (src_path, new_dst_path)
+    elif src_path.endswith('.jpg'):
+        # The current image is already in JPG format.
+        # Copy directly.
+        shutil.copyfile(src_path, dst_path)
+        print "Copy %s to %s" % (src_path, dst_path)
+    else:
+        print "Ignore %s" % src_path
+
 # populate screenshots, TODO: code for android
 def populate_screenshots(screenshots_input_dir, prj_dir, customized_dir, platform):
-    for root, dirs, files in os.walk(screenshots_path, topdown=False):
-        for name in files:
-            if name.endswith(".png"):
-                source_path = os.path.join(root, name)
-                im = Image.open(source_path)
-                target_path = source_path[:-3] + 'jpg'
-                if not os.path.exists(target_path):
-                    im.save(target_path, "JPEG")
-                    print "converted %s to jpg" % source_path
+    print "populate screenshots: screenshots_input_dir = %s prj_dir = %s customized_dir = %s platform = %s" % \
+        (screenshots_input_dir, prj_dir, customized_dir, platform)
 
-    count = 0
-    
+    temp_dir = os.path.join(prj_dir, 'screenshots_temp')
+
+    remove_dir_if_exists(temp_dir)
+    make_dir_if_not_exists(temp_dir)
+
+    copy_and_overwrite_with_closure(screenshots_input_dir, temp_dir, copy_image_or_convert_if_possible)
+
+    # Output screenshots directory.
     screenshots_dir = os.path.join(prj_dir, 'screenshots')
 
     # Remove existing screenshots dir.
@@ -318,19 +336,20 @@ def populate_screenshots(screenshots_input_dir, prj_dir, customized_dir, platfor
         # Prepare languages folders.
         language_dir = os.path.join(screenshots_dir, key)
 
+        remove_dir_if_exists(language_dir)
         make_dir_if_not_exists(language_dir)
-        
-        for root, dirs, files in os.walk(screenshots_input_dir, topdown=False):
-            for name in files:
-                if name.endswith(".jpg"):
-                    count = count + 1
-                    source_path = os.path.join(root, name)
-                    target_path = os.path.join(screenshots_dir, key, name)
-                    shutil.copyfile(source_path, target_path)
-                    print "Copy file: %s > %s" % (source_path, target_path)
 
-    if customized_dir != None:
-        copy_and_overwrite(customized_dir, screenshots_dir)
+        copy_and_overwrite(temp_dir, language_dir)
+
+    remove_dir_if_exists(temp_dir)
+
+    if customized_dir != None:        
+        make_dir_if_not_exists(temp_dir)
+
+        copy_and_overwrite_with_closure(customized_dir, temp_dir, copy_image_or_convert_if_possible)
+        copy_and_overwrite(temp_dir, screenshots_dir)
+
+        remove_dir_if_exists(temp_dir)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
