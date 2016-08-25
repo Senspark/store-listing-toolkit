@@ -260,7 +260,7 @@ def populate_android_metadata(data, metadata_dir):
 
         title_path             = os.path.join(language_dir, 'title.txt')
         short_description_path = os.path.join(language_dir, 'short_description.txt')
-        full_description_path  = os.path.join(language_dir, 'full_description_path.txt')
+        full_description_path  = os.path.join(language_dir, 'full_description.txt')
 
         # Title, short description and full description.
         generate_file_with_tag_and_language(data, title_path,             'android_title',             language_name, 30)
