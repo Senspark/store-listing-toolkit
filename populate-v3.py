@@ -126,7 +126,9 @@ def check_and_generate_file(path, content, max):
     generate_file(path, content.encode('utf-8'))
 
 def read_sheet_data(sheet_id):
-    sheet_url = "http://docs.google.com/spreadsheets/d/%s/gviz/tq?&tq&gid=0&pref=2&pli=1" % sheet_id
+    # https://developers.google.com/chart/interactive/docs/spreadsheets
+    # https://developers.google.com/chart/interactive/docs/querylanguage
+    sheet_url = "http://docs.google.com/spreadsheets/d/%s/gviz/tq?&gid=0&headers=0" % sheet_id
     request = urllib2.urlopen(sheet_url)
 
     content = request.read()
